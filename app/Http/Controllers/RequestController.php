@@ -88,7 +88,7 @@ class RequestController extends Controller
             ['receiver_id', $request->input('user_id2')],
             ['requester_id', $request->input(('user_id1'))]
         ])->exists();
-        if($exists) return response()->json(true, 400);
+        if($exists) return response()->json(true, 200);
         return false;
     }
 
@@ -96,14 +96,14 @@ class RequestController extends Controller
             $requestModel = RequestModel::findOrFail($id);
             $requestModel->status = "declined";
             $requestModel->save();
-            return response()->json("successfully declined", 400);    
+            return response()->json("successfully declined", 200);    
     }
 
     public function acceptRequest(Request $request, $id){
         $requestModel = RequestModel::findOrFail($id);
         $requestModel->status = "accepted";
         $requestModel->save();
-        return response()->json("successfully accepted", 400);  
+        return response()->json("successfully accepted", 200);  
     }
 
 
