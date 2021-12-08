@@ -46,7 +46,7 @@ class AuthServiceProvider extends ServProvider
             // );
 
             $newUrl = substr($url, 0, 25);
-            $newUrl = $newUrl . '-app' . substr($url,26);
+            $newUrl = $newUrl . '-app' . substr($url,25);
 
             return (new MailMessage)
                 ->subject('Verify Email Address')
