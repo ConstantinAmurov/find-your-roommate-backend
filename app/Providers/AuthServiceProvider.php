@@ -45,12 +45,13 @@ class AuthServiceProvider extends ServProvider
             //     ]
             // );
 
-            $url = 'https://find-your-roommate-app.herokuapp.com/';
-
+            $newUrl = substr($url, 0, 25);
+            $newUrl = $newUrl + '-app' + substr($url,26);
+            
             return (new MailMessage)
                 ->subject('Verify Email Address')
                 ->line('Click the button below to verify your email address.')
-                ->action('Verify Email Address', $url);
+                ->action('Verify Email Address', $newUrl);
 
             // return $frontendUrl . '?verify_url=' . urlencode($verifyUrl);
         });
