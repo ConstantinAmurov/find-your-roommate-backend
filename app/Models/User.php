@@ -56,7 +56,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function sendPasswordResetNotification($token)
     {
-        $url = 'https://find-your-roommate-app.herokuapp.com/reset-password?token=' . $token ;
+        $url = 'http://find-your-roommate-app.herokuapp.com/reset-password?token=' . $token ;
         $this->notify(new ResetPasswordNotification($url));
     }
 
