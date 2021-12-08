@@ -45,7 +45,7 @@ class AuthServiceProvider extends ServProvider
             //     ]
             // );
 
-            $url[17] = '3';
+            $url = 'https://find-your-roommate-app.herokuapp.com/';
 
             return (new MailMessage)
                 ->subject('Verify Email Address')
